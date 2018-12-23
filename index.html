@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/png" href="favicon.ico"/>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Disneyland Reviews</title>
+        <script src="jquery-3.1.1.min.js"></script>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <div class="container">
+                <h1>Disneyland Reviews</h1>
+                <form id ="form" onsubmit="return false">
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <select name="language" id="language" class="form-control">
+                                <option value="">Alle Sprachen</option>
+                                <option value="DE">Deutsch</option>
+                                <option value="FR">Französisch</option>
+                                <option value="EN">Englisch</option>
+                                <option value="IT">Italienisch</option>
+                                <option value="ESP">Spanisch</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select name="stars" id="stars" class="form-control">
+                                <option value="">Alle Bewertungen</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-1">
+                            <label for="from">von</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="date" name="from" id="from" class="form-control" placeholder="von">
+                        </div>
+                        <div class="col-md-1">
+                            <label for="to">bis</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="date" name="to" id="to" class="form-control" placeholder="bis">
+                        </div>
+                        <div class="col-md-4">
+                            <select name="rows" id="rows" class="form-control">
+                                <option value="10">10 Ergebnisse</option>
+                                <option value="25">25 Ergebnisse</option>
+                                <option value="50">50 Ergebnisse</option>
+                                <option value="100">100 Ergebnisse</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-2">
+                            <select name="what" id="what" class="form-control">
+                                <option value="inlcudesOneWords">enthält eines der Wörter(Leerzeichen)</option>
+                                <option value="inlcudesAllWords">enthält alle Wörter(Leerzeichen)</option>
+                                <option value="startsWith">Startet mit(ein Wort)</option>
+                                <option value="endsWith">Endet mit(ein Wort)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-10">
+                            <input type="text" id="review" name="review" placeholder="Suchbegriff"  class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-2">
+                            <button type="button" onclick="solrForm.send();" class="btn btn-primary">Suchen</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="head">
+
+                </div>
+                <div id="result"></div>
+            </div>
+        </div>
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+        <script src="main.js"></script>
+    </body>
+</html>
